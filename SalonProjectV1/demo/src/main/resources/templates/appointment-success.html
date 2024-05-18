@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #4a4e69;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 24px;
+            color: #6b7085;
+            margin-bottom: 30px;
+        }
+
+        .name {
+            font-weight: bold;
+            color: #6b7085;
+            font-size: 28px;
+        }
+
+        .btn {
+            background-color: #ff7f51;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 20px 40px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background-color: #ff6b38;
+        }
+
+        .decoration {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 100px;
+            color: #ff7f51;
+            opacity: 0.1;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 36px;
+            }
+            p {
+                font-size: 20px;
+            }
+            .name {
+                font-size: 24px;
+            }
+            .btn {
+                padding: 15px 30px;
+                font-size: 20px;
+            }
+            .decoration {
+                font-size: 60px;
+                top: -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration">❤️</div>
+    <div class="container">
+        <h1>Thank You!</h1>
+        <p>Dear <span class="name" th:text="${name}"></span>,</p>
+        <p>Thank you for scheduling an appointment. Here are the details:</p>
+        <p>Date: <span th:text="${customer.date}"></span></p>
+        <p>Time: <span th:text="${customer.time}"></span></p>
+        <button class="btn" onclick="window.location.href='/index'">Close</button>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

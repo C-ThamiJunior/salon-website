@@ -1,0 +1,21 @@
+.header-container {
+    position: relative; 
+    background-image: url("/Logo.jpg"); 
+    background-size: contain; 
+    background-position: center;
+    min-height: 400px; 
+    opacity: 0.5;
+}
+
+header h1, header nav {
+    position: relative; 
+    z-index: 1; 
+}
+.navbar {
+    position: relative; 
+    top: 0; 
+    right: 0; 
+    padding: 10px; 
+}
+
+

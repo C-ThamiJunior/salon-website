@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reviews - Humi Hair</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <style>
+        .header-container {
+    position: relative; 
+    background-image: url("Logo.jpg"); 
+    background-size: contain; 
+    background-position: center;
+    min-height: 400px; 
+    opacity: 0.5;
+}
+
+header h1, header nav {
+    position: relative; 
+    z-index: 1; 
+}
+.navbar {
+    position: relative; 
+    top: 0; 
+    right: 0; 
+    padding: 10px; 
+}
+
+
+
+    </style>
+    <header>
+        
+        
+            <h1>HUMI HAIRS</h1>
+            <nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/addReviewForm">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+    
+    </header>
+
+    <div class="container py-5">
+        <div class="form-container">
+            <h2>Add Review</h2>
+            <form action="/addReview" method="post" th:object="${review}">
+                <div class="mb-3">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" th:field="*{name}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" th:field="*{email}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="service">Service:</label>
+                    <input type="text" id="service" name="service" class="form-control" th:field="*{service}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" class="form-control" th:field="*{comment}" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="rating">Rating:</label>
+                    <select id="rating" name="rating" class="form-select" th:field="*{rating}" required>
+                        <option value="1">1 Star</option>
+                        <option value="2">2 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="5">5 Stars</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="text-center bg-dark text-white py-4">
+        <div class="container">
+            <nav>
+                <ul class="nav justify-content-center mb-3">
+                    <li class="nav-item"><a class="nav-link text-white" href="/index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="login">Admin</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/addReviewForm">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2024 Humi Hair. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
